@@ -37,7 +37,6 @@ app.post("/", (req, res) => {
     method: "POST",
     auth: "Ajmal777:aa8c3a2dda93ba310279e1b9e4d3e9e6-us14"
   }
-  //04d2c007-e0ee-494d-8081-f930f461ff99
   const request = https.request(url, options, (response) => {
     const status = response.statusCode;
     if (status === 200) {
@@ -59,6 +58,6 @@ app.post("/failure", (req, res) => {
   res.redirect("/");
 })
 
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log("Server is running on port 3000");
 });
